@@ -1,25 +1,26 @@
+# -*- coding: utf-8 -*-
 question_schema = {
     # Schema definition, based on Cerberus grammar. Check the Cerberus project
     # (https://github.com/pyeve/cerberus) for details.
+    # 题目
     'topic': {
         'type': 'string',
         'minlength': 1,
         'maxlength': 200,
         'required': True,
     },
+    # 选项
     'options': {
         'type': 'list',
         'minlength': 2,
         'maxlength': 5,
         # 'required': True,
     },
+    # 题目的类型， 选择 解答 等
     'type': {
         'type': 'string',
         'minlength': 1,
         'maxlength': 20,
-    },
-    'ctime': {
-        'type': 'datetime'
     }
 }
 
