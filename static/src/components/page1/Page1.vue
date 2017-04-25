@@ -11,8 +11,6 @@
 </template>
 
 <script type="text/javascript">
-  import { mapGetters, mapActions } from 'vuex';
-
   export default {
     data() {
       return {
@@ -21,15 +19,11 @@
       };
     },
     computed: {
-      ...mapGetters({
-        countNum: 'count',
-      }),
+      countNum() { return 1; },
     },
     methods: {
-      ...mapActions({
-        increment: 'increment',
-        decrement: 'decrement',
-      }),
+      increment() { console.log('inc'); },
+      decrement() { console.log('dec'); },
     },
     watch: {
       countNum(val) {
