@@ -6,7 +6,7 @@
 
 # API
 
-1. GET /question
+1. GET /api/question
 ```
 {
   "_items": [
@@ -54,7 +54,7 @@
 }
 ```
 
-2. POST /question
+2. POST /api/question
 
 in Content-Type: application/json
 ```
