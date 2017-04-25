@@ -1,21 +1,55 @@
 <template lang="html">
   <div class="page">
-    <h1 v-text="hello"></h1>
+    <h1 v-text="school"></h1>
     <div class="question">
-      <h2>Vuex2 Example</h2>
-      <button  @click="decrement">-</button>
-      <span v-text="count"></span>
-      <button @click="increment">+</button>
+      <h2>电力系统 - 题库</h2>
+
+      <QuestionItem
+          v-for="(question, index) in questions"
+          :key="question.date"
+          v-bind:question="question"
+          v-bind:index="index">
+      </QuestionItem>
+
+      <div class="block pagination">
+        <el-pagination
+          layout="prev, pager, next"
+          :total="50">
+        </el-pagination>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script type="text/javascript">
+  import QuestionItem from './questionItem.vue';
+
   export default {
+    components: {
+      QuestionItem,
+    },
     data() {
       return {
-        hello: '题库',
+        school: '郫县男子技术专修学校',
         count: 0,
+        questions: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄',
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄',
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄',
+        }, {
+          date: '2016-05-09',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄',
+        }],
       };
     },
     computed: {
@@ -39,24 +73,13 @@
       text-align: center;
       color: #ff0000;
     }
-    .vuex-example {
-      margin: 200px auto;
+    .question {
+      margin: 10px auto;
       text-align: center;
       font-size: 16px;
-      color: #fff;
-      span {
-        display: inline-block;
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-      button {
-        border: none;
-        width: 40px;
-        height: 40px;
-        outline: none;
-        border-radius: 50%;
-        background-color: #fff;
-      }
+    }
+    .pagination {
+      margin-top: 50px;
     }
   }
 </style>

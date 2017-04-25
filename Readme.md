@@ -79,4 +79,12 @@ response
   "_etag": "d8b794a3a32cfcb847b4eaaa1e65b5737112e6e7"
 }
 
+3. GET /api/question/58fdfaaf1e9ed6baa97da1ad
+
+获取某个问题
+
+4. PUT /api/question/58fdfaaf1e9ed6baa97da1ad
+
+in If-Match: _etag    also in DELETE
+
 ```
