@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 question_schema = {
     # Schema definition, based on Cerberus grammar. Check the Cerberus project
     # (https://github.com/pyeve/cerberus) for details.
@@ -14,7 +15,11 @@ question_schema = {
         'type': 'list',
         'minlength': 2,
         'maxlength': 5,
-        # 'required': True,
+    },
+    # 正确答案
+    'answer': {
+        'type': 'string',
+        # ''
     },
     # 题目的类型， 选择 解答 等
     'type': {
