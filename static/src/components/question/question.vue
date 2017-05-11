@@ -23,7 +23,7 @@
 </template>
 
 <script type="text/javascript">
-  import QuestionItem from './questionItem.vue';
+  import QuestionItem from './QuestionItem.vue';
 
   export default {
     components: {
