@@ -31,7 +31,7 @@
     },
     data() {
       return {
-        school: '郫县男子技术专修学校',
+        school: '郫县男子技术专修学校 ',
         count: 0,
         questions: [{
           date: '2016-05-02',
