@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from ..utils import const_to_list
+from .. import const
 
 question_schema = {
     # Schema definition, based on Cerberus grammar. Check the Cerberus project
@@ -26,6 +28,7 @@ question_schema = {
         'type': 'string',
         'minlength': 1,
         'maxlength': 20,
+        'allowed': const_to_list(const.QUESTION_TYPE),
     }
 }
 

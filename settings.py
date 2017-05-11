@@ -1,4 +1,4 @@
-from models.question import question
+from app.models.question import question
 
 DOMAIN = {'question': question}
 

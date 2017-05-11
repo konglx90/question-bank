@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 class Const(object):
 
 	class ConstError(TypeError):
@@ -34,7 +35,6 @@ class Const(object):
 		return self._items[name]
 
 	def __setattr__(self, name, value):
-		print(self.__dict__)
 		if not name.isupper() and name not in self.reserved_keys:
 			raise self.ConstCaseError, "const name '%s' is not all uppercase" % name
 		if name not in self.reserved_keys:
@@ -43,9 +43,6 @@ class Const(object):
 			self.__dict__['_items'][name] = value
 
 		self.__dict__[name] = value
-		# if self.__dict__.get('_item', {}).has_key(name):
-		# 	raise self.ConstError, "Can't rebind const instance attribute (%s)" % name
-		# self.__dict__.get('_item', {})[name] = value
 
 	def __contains__(self, value):
 		return value in self._values
@@ -64,5 +61,12 @@ class Const(object):
 		return self._values
 
 
-a = Const(1, 2)
-print a
+# 题目的类型
+QUESTION_TYPE = Const(
+	# 单项选择题
+	SINGLE_CHOICE='SINGLE_CHOICE',
+	# 多项选择题
+	MORE_CHOICE='MORE_CHOICE',
+	# 概述解答题
+	SUMMARY='SUMMARY'
+)
