@@ -6,9 +6,9 @@
       </router-link>
     </div>
     <el-submenu index="1">
-      <template slot="title"><i class="el-icon-menu"></i>导航一</template>
-      <el-menu-item index="1-1"><router-link to="/page1" class="nav-link">二级导航一</router-link></el-menu-item>
-      <el-menu-item index="1-2"><router-link to="/question" class="nav-link">题库</router-link></el-menu-item>
+      <template slot="title"><i class="el-icon-menu"></i>电力系统题库</template>
+      <el-menu-item index="1-1"><router-link to="/my-data" class="nav-link">我的数据</router-link></el-menu-item>
+      <el-menu-item index="1-2"><router-link to="/question" class="nav-link">题库管理</router-link></el-menu-item>
     </el-submenu>
   </el-menu>
 </template>

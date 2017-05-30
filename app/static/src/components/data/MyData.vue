@@ -1,11 +1,8 @@
 <template lang="html">
   <div class="page">
     <h1 v-text="hello"></h1>
-    <div class="vuex-example">
-      <h2>Vuex2 Example</h2>
-      <button  @click="decrement">-</button>
-      <span v-text="count"></span>
-      <button @click="increment">+</button>
+    <div class="my-data">
+
     </div>
   </div>
 </template>
@@ -14,8 +11,7 @@
   export default {
     data() {
       return {
-        hello: 'Hello World',
-        count: 0,
+        hello: '我的数据',
       };
     },
     computed: {
@@ -23,7 +19,6 @@
     },
     methods: {
       increment() { console.log('inc'); },
-      decrement() { console.log('dec'); },
     },
     watch: {
       countNum(val) {
@@ -37,13 +32,12 @@
   .page {
     h1 {
       text-align: center;
-      color: #ff0000;
+      color: #20202A;
     }
-    .vuex-example {
+    .my-data {
       margin: 200px auto;
       text-align: center;
       font-size: 16px;
-      color: #fff;
       span {
         display: inline-block;
         margin-left: 20px;
@@ -55,7 +49,6 @@
         height: 40px;
         outline: none;
         border-radius: 50%;
-        background-color: #fff;
       }
     }
   }

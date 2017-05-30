@@ -1,5 +1,5 @@
 import Home from './components/home/home.vue';
-import Page1 from './components/page1/Page1.vue';
+import MyData from './components/data/MyData.vue';
 import Question from './components/question/Question.vue';
 
 export default [
@@ -7,8 +7,8 @@ export default [
     path: '/',
     component: Home,
   }, {
-    path: '/page1',
-    component: Page1,
+    path: '/my-data',
+    component: MyData,
   }, {
     path: '/question',
     component: Question,
