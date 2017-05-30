@@ -1,2 +1,5 @@
 build/*.js
 config/*.js
+
+src/components/data/polar.vue
+src/components/data/EChartData.vue
