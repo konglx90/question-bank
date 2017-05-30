@@ -31,24 +31,24 @@
     },
     data() {
       return {
-        school: '郫县男子技术专修学校 ',
+        school: '电子科技大学',
         count: 0,
         questions: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
+          topic: '我国国家标准规定的额定电压有',
+          type: '解答题',
+          score: '3',
         }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄',
+          topic: '电力网络是指在电力系统中由变压器、电力线路等变换、输送、分配电能设备所组成的部分',
+          type: '解答题',
+          score: '3',
         }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄',
+          topic: '电力系统是指由发电机、各类变电所和输电线路以及电力用户组成的整体',
+          type: '解答题',
+          score: '3',
         }, {
-          date: '2016-05-09',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄',
+          topic: '总装机容量是指电力系统中实际安装的发电机组额定百功功率的总和',
+          type: '解答题',
+          score: '3',
         }],
       };
     },
@@ -71,10 +71,9 @@
   .page {
     h1 {
       text-align: center;
-      color: #ff0000;
     }
     .question {
-      margin: 10px auto;
+      margin: 10px 16px;
       text-align: center;
       font-size: 16px;
     }

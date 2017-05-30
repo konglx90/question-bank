@@ -2,7 +2,6 @@
    <main>
      <figure><chart :options="bar" ref="bar" auto-resize></chart></figure>
 
-     <h2>Pie chart <small>(with action dispatch)</small></h2>
      <figure><chart :options="pie" ref="pie" auto-resize></chart></figure>
    </main>
 </template>
