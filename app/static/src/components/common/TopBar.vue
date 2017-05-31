@@ -7,7 +7,7 @@
           <i class="el-icon-arrow-down"></i>
           <div class="drop-menu">
             <ul>
-              <li><i class="iconfont">&#xe603;</i>管理员</li>
+              <li @click="loginAdmin"><i class="iconfont">&#xe603;</i>管理员</li>
               <li @click="signOut"><i class="iconfont">&#xe602;</i>退出</li>
             </ul>
           </div>
@@ -35,6 +35,9 @@
     methods: {
       signOut() {
         console.log('退出登录');
+      },
+      loginAdmin() {
+        window.location.href = '/admin';
       },
     },
   };
