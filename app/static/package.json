@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "element-ui": "^1.2.9",
+    "jquery": "^3.2.1",
     "normalize.css": "^6.0.0",
     "opn": "^4.0.2",
     "vue": "^2.2.6",

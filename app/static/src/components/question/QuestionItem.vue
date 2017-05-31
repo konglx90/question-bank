@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="question-item">
-      <span>{{ index + 1 }}. </span><span>{{ question.topic }} ?</span>
+      <span>{{ index + 1 }}. </span><span>{{ question.fields.topic }} ? ({{question.fields.score}}')</span>
     </div>
   </div>
 </template>

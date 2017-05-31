@@ -23,6 +23,7 @@
 </template>
 
 <script type="text/javascript">
+  /* eslint-disable */
   import QuestionItem from './QuestionItem.vue';
 
   export default {
@@ -33,23 +34,7 @@
       return {
         school: '电子科技大学',
         count: 0,
-        questions: [{
-          topic: '我国国家标准规定的额定电压有',
-          type: '解答题',
-          score: '3',
-        }, {
-          topic: '电力网络是指在电力系统中由变压器、电力线路等变换、输送、分配电能设备所组成的部分',
-          type: '解答题',
-          score: '3',
-        }, {
-          topic: '电力系统是指由发电机、各类变电所和输电线路以及电力用户组成的整体',
-          type: '解答题',
-          score: '3',
-        }, {
-          topic: '总装机容量是指电力系统中实际安装的发电机组额定百功功率的总和',
-          type: '解答题',
-          score: '3',
-        }],
+        questions: [],
       };
     },
     computed: {
@@ -64,7 +49,29 @@
         this.count = val;
       },
     },
-  };
+    created() {
+      $.get('/car_manage/dapi/question', (data) => {
+        console.log(data);
+      });
+      const data = [
+        {
+          "fields":
+          {
+            "_type": 2,
+            "ctime": "2017-05-31T13:13:58.594",
+            "topic": "\u7535\u529b\u7f51\u7edc\u662f\u6307\u5728\u7535\u529b\u7cfb\u7edf\u4e2d\u7531\u53d8\u538b\u5668\u3001\u7535\u529b\u7ebf\u8def\u7b49\u53d8\u6362\u3001\u8f93\u9001\u3001\u5206\u914d\u7535\u80fd\u8bbe\u5907\u6240\u7ec4\u6210\u7684\u90e8\u5206",
+            "difficulty": 0.3,
+            "score": 5,
+            "answer": "",
+            "points": 4
+          },
+          "model": "car_manage.question",
+          "pk": 3
+        },
+      ];
+      this.questions = this.questions.concat(data);
+    },
+  }
 </script>
 
 <style lang="scss" scoped>
