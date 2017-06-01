@@ -53,59 +53,10 @@
     },
     created() {
       $.get('/car_manage/dapi/question', (data) => {
+        console.log(this.questions, data, data.data);
         this.questions = this.questions.concat(data.data);
         console.log(this.questions);
       });
-      const data = {
-num_pages: 1,
-cur_page: 1,
-data: [
-{
-_type: 2,
-ctime: {
-$date: 1496268902176
-},
-options: [
-{
-topic: "选项二",
-ctime: {
-$date: 1496321578888
-},
-id: 2,
-is_right: true
-},
-{
-topic: "选项一",
-ctime: {
-$date: 1496321566186
-},
-id: 1,
-is_right: true
-}
-],
-topic: "电力网络是指在电力系统中由变压器、电力线路等变换、输送、分配电能设备所组成的部分 ",
-difficulty: 0.3,
-score: 3,
-answer: "没有答案",
-id: 2,
-points: 1
-},
-{
-_type: 5,
-ctime: {
-$date: 1496230905215
-},
-options: [ ],
-topic: "电力系统是指由发电机、各类变电所和输电线路以及电力用户组成的整体",
-difficulty: 0.6,
-score: 6,
-answer: "12",
-id: 1,
-points: 4
-}
-]
-};
-this.questions = this.questions.concat(data.data);
     },
   }
 </script>
