@@ -14,6 +14,8 @@ import {
   Col,
   Input,
   Menu,
+  Radio,
+  Checkbox,
 } from 'element-ui';
 import App from './App.vue';
 import routes from './routes';
@@ -29,6 +31,8 @@ Vue.use(FormItem);
 Vue.use(Row);
 Vue.use(Col);
 Vue.use(Input);
+Vue.use(Radio);
+Vue.use(Checkbox);
 
 Vue.use(VueRouter);
 

@@ -6,10 +6,12 @@
 
       <QuestionItem
           v-for="(question, index) in questions"
-          :key="question.date"
+          :key="question.id"
           v-bind:question="question"
           v-bind:index="index">
       </QuestionItem>
+
+      <el-button type="primary">提交答案</el-button>
 
       <div class="block pagination">
         <el-pagination
@@ -51,25 +53,59 @@
     },
     created() {
       $.get('/car_manage/dapi/question', (data) => {
-        console.log(data);
+        this.questions = this.questions.concat(data.data);
+        console.log(this.questions);
       });
-      const data = [
-        {
-          "fields":
-          {
-            "_type": 2,
-            "ctime": "2017-05-31T13:13:58.594",
-            "topic": "\u7535\u529b\u7f51\u7edc\u662f\u6307\u5728\u7535\u529b\u7cfb\u7edf\u4e2d\u7531\u53d8\u538b\u5668\u3001\u7535\u529b\u7ebf\u8def\u7b49\u53d8\u6362\u3001\u8f93\u9001\u3001\u5206\u914d\u7535\u80fd\u8bbe\u5907\u6240\u7ec4\u6210\u7684\u90e8\u5206",
-            "difficulty": 0.3,
-            "score": 5,
-            "answer": "",
-            "points": 4
-          },
-          "model": "car_manage.question",
-          "pk": 3
-        },
-      ];
-      this.questions = this.questions.concat(data);
+      const data = {
+num_pages: 1,
+cur_page: 1,
+data: [
+{
+_type: 2,
+ctime: {
+$date: 1496268902176
+},
+options: [
+{
+topic: "选项二",
+ctime: {
+$date: 1496321578888
+},
+id: 2,
+is_right: true
+},
+{
+topic: "选项一",
+ctime: {
+$date: 1496321566186
+},
+id: 1,
+is_right: true
+}
+],
+topic: "电力网络是指在电力系统中由变压器、电力线路等变换、输送、分配电能设备所组成的部分 ",
+difficulty: 0.3,
+score: 3,
+answer: "没有答案",
+id: 2,
+points: 1
+},
+{
+_type: 5,
+ctime: {
+$date: 1496230905215
+},
+options: [ ],
+topic: "电力系统是指由发电机、各类变电所和输电线路以及电力用户组成的整体",
+difficulty: 0.6,
+score: 6,
+answer: "12",
+id: 1,
+points: 4
+}
+]
+};
+this.questions = this.questions.concat(data.data);
     },
   }
 </script>
