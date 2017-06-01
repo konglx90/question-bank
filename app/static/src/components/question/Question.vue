@@ -53,8 +53,8 @@
     },
     created() {
       $.get('/car_manage/dapi/question', (data) => {
-        console.log(this.questions, data, data.data);
-        this.questions = this.questions.concat(data.data);
+        console.log(this.questions, JSON.parse(data), JSON.parse(data).data);
+        this.questions = this.questions.concat(JSON.parse(data).data);
         console.log(this.questions);
       });
     },
