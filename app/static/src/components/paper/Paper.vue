@@ -1,17 +1,8 @@
 <template lang="html">
   <div class="page">
     <h1 v-text="school"></h1>
-    <div class="question">
+    <div class="paper">
       <h2>电力系统 - 组卷</h2>
-
-      <QuestionItem
-          v-for="(question, index) in questions"
-          :key="question.id"
-          v-bind:question="question"
-          v-bind:index="index">
-      </QuestionItem>
-
-      <el-button type="primary">组新卷</el-button>
 
       <div class="block pagination">
         <el-pagination
@@ -19,6 +10,23 @@
           :total="total">
         </el-pagination>
       </div>
+
+      <div>
+        <el-input class="input" v-model="input1" maxlength=12>
+          <template slot="prepend">期望总分</template>
+        </el-input>
+      </div>
+      <div>
+        <el-input class="input" v-model="input2">
+          <template slot="prepend">期望试卷难度</template>
+        </el-input>
+      </div>
+      <div>
+        <el-input class="input" v-model="input3">
+          <template slot="prepend">期望试卷知识点覆盖率</template>
+        </el-input>
+      </div>
+      <el-button type="primary">组新卷</el-button>
 
     </div>
   </div>
@@ -35,9 +43,9 @@
     data() {
       return {
         school: '电子科技大学',
-        count: 0,
-        questions: [],
-        total: 0,
+        input1: 0.0,
+        input2: 0.0,
+        input3: 0.0,
       };
     },
     computed: {
@@ -53,11 +61,7 @@
       },
     },
     created() {
-      $.get('/car_manage/dapi/question', (data) => {
-        const j_data = JSON.parse(data);
-        this.questions = this.questions.concat(j_data.data);
-        this.total = j_data.total;
-      });
+
     },
   }
 </script>
@@ -67,10 +71,15 @@
     h1 {
       text-align: center;
     }
-    .question {
+    .paper {
       margin: 10px 16px;
-      text-align: center;
+      text-align: left;
       font-size: 16px;
+
+      .input {
+        width: 256px;
+        margin: 4px 0;
+      }
     }
     .pagination {
       margin-top: 50px;

@@ -50,7 +50,7 @@
       handleCurrentChange(val) {
         $.get('/car_manage/dapi/question?page='+val, (data) => {
           const j_data = JSON.parse(data);
-          this.questions = this.questions.concat(j_data.data);
+          this.questions = j_data.data;
         });
       },
     },
