@@ -1,5 +1,6 @@
 import MyData from './components/data/MyData.vue';
 import Question from './components/question/Question.vue';
+import Paper from './components/paper/Paper.vue';
 
 export default [
   {
@@ -11,5 +12,8 @@ export default [
   }, {
     path: '/question',
     component: Question,
+  }, {
+    path: '/paper',
+    component: Paper,
   },
 ];

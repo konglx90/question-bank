@@ -15,8 +15,9 @@
 
       <div class="block pagination">
         <el-pagination
+          @current-change="handleCurrentChange"
           layout="prev, pager, next"
-          :total="50">
+          :total="total">
         </el-pagination>
       </div>
 
@@ -37,6 +38,7 @@
         school: '电子科技大学',
         count: 0,
         questions: [],
+        total: 50,
       };
     },
     computed: {
@@ -45,6 +47,12 @@
     methods: {
       increment() { console.log('inc'); },
       decrement() { console.log('dec'); },
+      handleCurrentChange(val) {
+        $.get('/car_manage/dapi/question?page='+val, (data) => {
+          const j_data = JSON.parse(data);
+          this.questions = this.questions.concat(j_data.data);
+        });
+      },
     },
     watch: {
       countNum(val) {
@@ -53,9 +61,9 @@
     },
     created() {
       $.get('/car_manage/dapi/question', (data) => {
-        console.log(this.questions, JSON.parse(data), JSON.parse(data).data);
-        this.questions = this.questions.concat(JSON.parse(data).data);
-        console.log(this.questions);
+        const j_data = JSON.parse(data);
+        this.questions = this.questions.concat(j_data.data);
+        this.total = j_data.total;
       });
     },
   }
