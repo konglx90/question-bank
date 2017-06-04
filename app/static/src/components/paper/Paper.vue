@@ -81,9 +81,8 @@
       return {
         school: '电子科技大学',
         papers:  [],
-        input1: 0.0,
-        input2: 0.0,
-        input3: 0.0,
+        input1: 100,
+        input2: 7.2,
         total: 0,
         fullscreenLoading: false,
       };
@@ -97,7 +96,7 @@
       handleClick() { console.log('dd') },
       openFullScreen() {
         this.fullscreenLoading = true;
-        $.get('/car_manage/dapi/create_paper', (data) => {
+        $.get('/car_manage/dapi/create_paper?difficulty='+this.input2+'&total_score='+this.input1, (data) => {
           const j_data = JSON.parse(data);
           console.log(j_data);
           if (j_data !== false) {
