@@ -82,7 +82,7 @@
         school: '电子科技大学',
         papers:  [],
         input1: 100,
-        input2: 7.2,
+        input2: 0.72,
         total: 0,
         fullscreenLoading: false,
       };
