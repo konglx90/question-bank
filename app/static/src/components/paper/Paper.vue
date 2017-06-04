@@ -99,7 +99,7 @@
         $.get('/car_manage/dapi/create_paper?difficulty='+this.input2+'&total_score='+this.input1, (data) => {
           const j_data = JSON.parse(data);
           console.log(j_data);
-          if (j_data !== false) {
+          if (j_data !== 0) {
               this.papers = this.papers.concat(j_data.paper);
               this.$message({message: '成功', type: 'success'});
           } else {
