@@ -63,7 +63,7 @@
           <template slot="prepend">期望试卷知识点覆盖率</template>
         </el-input>
       </div> -->
-      <el-button type="primary">组新卷</el-button>
+      <el-button type="primary" @click="openFullScreen" v-loading.fullscreen.lock="fullscreenLoading">组新卷</el-button>
 
     </div>
   </div>
@@ -80,25 +80,12 @@
     data() {
       return {
         school: '电子科技大学',
-        papers:  [
-{
-ctime: {
-$date: 1496573841856
-},
-title: "电力系统分析(2017-2018)368",
-question_list: "[439, 442, 382, 396, 352, 403, 358, 298, 210, 238, 214, 239, 120, 184, 193, 158, 36, 97, 10, 75, 38, 73, 80, 68, 97, 100]",
-sum_score: 100,
-difficulty: 0.723,
-adaptation_degree: 0.925,
-p_coverage: 0.756,
-id: 4,
-question_count: 26
-}
-],
+        papers:  [],
         input1: 0.0,
         input2: 0.0,
         input3: 0.0,
         total: 0,
+        fullscreenLoading: false,
       };
     },
     computed: {
@@ -108,6 +95,20 @@ question_count: 26
       increment() { console.log('inc'); },
       decrement() { console.log('dec'); },
       handleClick() { console.log('dd') },
+      openFullScreen() {
+        this.fullscreenLoading = true;
+        $.get('/car_manage/dapi/create_paper', (data) => {
+          const j_data = JSON.parse(data);
+          console.log(j_data);
+          if (j_data !== false) {
+              this.papers = this.papers.concat(j_data.paper);
+              this.$message('成功');
+          } else {
+            this.$message('失败， 请重新输入参数');
+          }
+          this.fullscreenLoading = false;
+        });
+      },
     },
     watch: {
       countNum(val) {
