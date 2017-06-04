@@ -16,6 +16,8 @@ import {
   Menu,
   Radio,
   Checkbox,
+  Table,
+  TableColumn,
 } from 'element-ui';
 import App from './App.vue';
 import routes from './routes';
@@ -33,12 +35,18 @@ Vue.use(Col);
 Vue.use(Input);
 Vue.use(Radio);
 Vue.use(Checkbox);
+Vue.use(Table);
+Vue.use(TableColumn);
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes,
 });
+
+// export default function go(path, params) {
+//   router.push({ path: path, params: params });
+// }
 
 /* eslint-disable no-new */
 new Vue({
