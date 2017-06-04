@@ -18,6 +18,8 @@ import {
   Checkbox,
   Table,
   TableColumn,
+  Message,
+  Loading,
 } from 'element-ui';
 import App from './App.vue';
 import routes from './routes';
@@ -37,6 +39,10 @@ Vue.use(Radio);
 Vue.use(Checkbox);
 Vue.use(Table);
 Vue.use(TableColumn);
+// Vue.use(Message);
+
+Vue.use(Loading.directive);
+Vue.prototype.$message = Message;
 
 Vue.use(VueRouter);
 

@@ -102,9 +102,9 @@
           console.log(j_data);
           if (j_data !== false) {
               this.papers = this.papers.concat(j_data.paper);
-              this.$message('成功');
+              this.$message({message: '成功', type: 'success'});
           } else {
-            this.$message('失败， 请重新输入参数');
+              this.$message({message: '失败， 请重新输入参数', type: 'error'});
           }
           this.fullscreenLoading = false;
         });
