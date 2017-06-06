@@ -102,7 +102,7 @@
           console.log(j_data);
           if (j_data !== 0) {
               this.papers.pop();
-              this.papers = this.papersunshift(j_data.paper).;
+              this.papers = this.papers.unshift(j_data.paper);
               this.$message({message: '成功', type: 'success'});
           } else {
               this.$message({message: '失败， 请重新输入参数', type: 'error'});
