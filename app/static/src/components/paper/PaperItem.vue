@@ -13,14 +13,6 @@
 
       <el-button type="primary" @click="answer">提交答案</el-button>
 
-      <div class="block pagination">
-        <el-pagination
-          @current-change="handleCurrentChange"
-          layout="prev, pager, next"
-          :total="total">
-        </el-pagination>
-      </div>
-
     </div>
   </div>
 </template>
@@ -48,12 +40,6 @@
     methods: {
       increment() { console.log('inc'); },
       decrement() { console.log('dec'); },
-      handleCurrentChange(val) {
-        $.get('/car_manage/dapi/get_one_paper?page='+val+'&id='+this.id, (data) => {
-          const j_data = JSON.parse(data);
-          this.questions = j_data.data;
-        });
-      },
       answer() {
         this.$message({message: '提交成功, 静待佳音', type: 'success'});
       },
@@ -66,7 +52,7 @@
     created() {
       $.get('/car_manage/dapi/get_one_paper?id='+this.id, (data) => {
         const j_data = JSON.parse(data);
-        this.questions = this.questions.concat(j_data.data);
+        this.questions = this.questions.concat(j_data.data).reverse();
         this.total = j_data.total;
       });
     },
