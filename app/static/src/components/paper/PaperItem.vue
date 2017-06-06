@@ -8,7 +8,8 @@
           v-for="(question, index) in questions"
           :key="question.id"
           v-bind:question="question"
-          v-bind:index="index">
+          v-bind:index="index"
+          v-bind:answer="answer">
       </QuestionItem>
 
       <el-button type="primary" @click="answer">提交答案</el-button>
@@ -19,7 +20,7 @@
 
 <script type="text/javascript">
   /* eslint-disable */
-  import QuestionItem from '../question/QuestionItem.vue';
+  import QuestionItem from './QuestionItem.vue';
 
   export default {
     components: {
@@ -41,7 +42,15 @@
       increment() { console.log('inc'); },
       decrement() { console.log('dec'); },
       answer() {
-        this.$message({message: '提交成功, 静待佳音', type: 'success'});
+        const len = this.questions.length;
+        let score = 0;
+        for (let i = 0; i < len; i += 1) {
+          if (this.questions[i].my_answer === true) {
+            score += this.questions[i].score;
+          }
+        }
+        this.$message({message: '提交成功, 客观题部分: ' + score +
+          ' 主观题交给教师批改， 静待佳音', type: 'success'});
       },
     },
     watch: {
