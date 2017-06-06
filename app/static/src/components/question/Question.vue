@@ -11,7 +11,7 @@
           v-bind:index="index">
       </QuestionItem>
 
-      <el-button type="primary">提交答案</el-button>
+      <el-button type="primary" @click="answer">提交答案</el-button>
 
       <div class="block pagination">
         <el-pagination
@@ -53,6 +53,9 @@
           this.questions = j_data.data;
         });
       },
+      answer() {
+        this.$message({message: '提交成功, 静待佳音', type: 'success'});
+      }
     },
     watch: {
       countNum(val) {
