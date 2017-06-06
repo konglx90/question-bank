@@ -43,6 +43,7 @@
 
       <div class="block pagination">
         <el-pagination
+          @current-change="handleCurrentChange"
           layout="prev, pager, next"
           :total="total">
         </el-pagination>
@@ -100,12 +101,19 @@
           const j_data = JSON.parse(data);
           console.log(j_data);
           if (j_data !== 0) {
-              this.papers = this.papers.concat(j_data.paper);
+              this.papers.pop();
+              this.papers = this.papersunshift(j_data.paper).;
               this.$message({message: '成功', type: 'success'});
           } else {
               this.$message({message: '失败， 请重新输入参数', type: 'error'});
           }
           this.fullscreenLoading = false;
+        });
+      },
+      handleCurrentChange(val) {
+        $.get('/car_manage/dapi/paper?page='+val, (data) => {
+          const j_data = JSON.parse(data);
+          this.questions = j_data.data;
         });
       },
     },
