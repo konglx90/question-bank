@@ -50,7 +50,7 @@
           }
         }
         this.$message({message: '提交成功, 客观题部分: ' + score +
-          ' 主观题交给教师批改， 静待佳音', type: 'success'});
+          ' 主观题交给教师批改， 静待佳音', type: 'success', duration: 0, showClose: true});
       },
     },
     watch: {
