@@ -113,7 +113,7 @@
       handleCurrentChange(val) {
         $.get('/car_manage/dapi/paper?page='+val, (data) => {
           const j_data = JSON.parse(data);
-          this.questions = j_data.data;
+          this.papers = j_data.data;
         });
       },
     },
