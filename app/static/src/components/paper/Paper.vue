@@ -103,7 +103,7 @@
           if (j_data !== 0) {
               this.papers.pop();
               console.log('papers', this.papers)
-              this.papers = this.papers.unshift(j_data.paper);
+              this.papers.unshift(j_data.paper);
               console.log('papers', this.papers)
               this.$message({message: '成功', type: 'success'});
           } else {
