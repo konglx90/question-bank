@@ -102,9 +102,9 @@
           console.log(j_data);
           if (j_data !== 0) {
               this.papers.pop();
-              console.log(papers, this.papers)
+              console.log('papers', this.papers)
               this.papers = this.papers.unshift(j_data.paper);
-              console.log(papers, this.papers)
+              console.log('papers', this.papers)
               this.$message({message: '成功', type: 'success'});
           } else {
               this.$message({message: '失败， 请重新输入参数', type: 'error'});
