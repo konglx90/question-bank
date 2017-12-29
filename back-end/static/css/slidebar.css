@@ -1,0 +1,10 @@
+/**********slidebar**********/
+/*.detailnav {*/
+    /*display: none;*/
+/*}*/
+.detailnav>li>a {
+    padding-left: 35px;
+}
+.navli {
+    background-color: #eee;
+}

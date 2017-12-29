@@ -1,0 +1,18 @@
+{% extends "car_management/base/base.html" %}
+{% block left %}
+<div class="container-fluid" style="padding: 0;">
+    <div class="col-sm-10 col-md-10 main">
+    <form action={% url 'car_manage:limits' %} method="get" id="limits_form">
+            清水河校区各单位每天可预约车辆数为:
+            <input type="text" class="form-control" id="qingshuihe" name="num_of_qingshuihe" value={{ qlimit }} style="height:5%;width: auto;display: inline; margin: 10px" disabled>
+            <br/>
+            沙河校区各单位每天可预约车辆数为:
+            <input type="text" class="form-control" id="shahe" name="num_of_shahe" value={{ slimit }} style="height:5%;width: auto;display: inline;margin: 10px" disabled>
+            <br/>
+            <input class="btn btn-info" id="change_num" value="修改"/>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<title>车辆预约</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="amourlee">
+
+		<!--========CSS========-->
+		<link rel="stylesheet" href="/static/css/lib/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/base.css">
+		<link rel="stylesheet" href="/static/css/login_reg.css">
+
+		<!--=====Javascript====-->
+		<script type="text/javascript" src="/static/js/lib/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/base.js"></script>
+
+		<!--html5shiv.js and respond.min.js support of HTML5 elements and media queries-->
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="/static/js/html5shiv.js"></script>
+		<script type="text/javascript" src="/static/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<!--Fixed Navbar-->
+		<nav class="navbar navbar-inverse" role="navigation">
+				<div class="container">
+                    <h1 style="text-align: center;">电子科技大学车辆预约平台</h1>
+				</div>
+		</nav>
+		<!--Navbar End-->
+
+<!--Base End-->
+<!--Page Content-->
+
+		<!--Login Content-->
+		<div class="content">
+			<div class="container">
+				<div class="content-header">
+					<h2>用户登录</h2>
+				</div>
+				<div class="content-body">
+					<div class="col-md-7 col-sm-7">
+						<div class="banner">
+							<img src="/static/img/images1.jpg" alt="">
+						</div>
+					</div>
+					<div class="col-md-5 col-sm-5 content-form">
+						<div class="form-title">
+						登&nbsp;录
+						</div>
+						<div class="form-body">
+							<form class="form-horizontal" role="form" method="post" action="">
+                                {% csrf_token %}
+								<div class="form-group">
+									<label class="control-label col-sm-3">账&nbsp;号</label>
+									<div class="input-group col-sm-9">
+										<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+{#                                        {{ form.account }}#}
+                                        <input class="form-control" id="login_username" name="username" placeholder="账号">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">密&nbsp;码</label>
+									<div class="input-group col-sm-9">
+										<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+{#                                        {{ form.password }}#}
+                                        <input type="password" class="form-control" id="login_password" name="password" placeholder="密码">
+									</div>
+
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-sm-3"></label>
+									<div class="col-sm-9 fuckbitch">
+									</div>
+								</div>
+                                    <input type="hidden" name="content" value="{{ content }}">
+								<div class="form-submit from-group">
+									<input type="submit" class="btn btn-lg btn-info caocao" id="login" value="登录">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Login Content End-->
+
+<!--Page Content End-->
+<!--Base-->
+
+		<!--Footer-->
+		<div class="footer">
+			<div class="container">
+				<div class="col-md-12 col-sm-12">
+					<p>开发团队：@黑虎工作室 </p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

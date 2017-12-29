@@ -1,0 +1,72 @@
+{% extends "car_management/base/base.html" %}
+{% block left %}
+    <div class="container-fluid">
+
+        <div class="col-sm-10 col-md-10 main">
+            <div class="topin">
+                <form action="/search" method="get" class="navbar-form navbar-left" role="search" style="margin: 0">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="q" placeholder="输入搜索内容" value=""/>
+                    </div>
+                    <button type="submit" class="btn btn-defaul">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+                <form action="{% url "car_manage:make_excel" %}" method="get">
+                    <span>开始时间：</span>
+                    <input type="text" class="form-control" id="date1" type="date" name="date1"
+                           style="width: 12%;display: inline"/>
+
+                    <span>结束时间： </span>
+                    <input type="text" class="form-control" id="date2" type="date" name="date2"
+                           style="width: 12%;display: inline"/>
+
+                    <input class="btn btn-default" id="in" type="#" value="按进校时间导出"/>
+                    <input class="btn btn-default" id="out" type="#" value="按出校时间导出"/>
+                </form>
+            </div>
+
+
+            <div class="panel panel-default" style="height: 100%;">
+                <div class="panel-heading">
+                    <h3 class="panel-title">今日预约车辆</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            {#                            <thead>#}
+                            <tr>
+                                <th>车牌号码</th>
+                                <th>进校时间段</th>
+                                <th>出校时间段</th>
+                                <th>到访单位</th>
+                                <th>校区、校门</th>
+                                <th>查看详情</th>
+                            </tr>
+                            {#                            </thead>#}
+                            <tbody>
+                            {% for list in lists %}
+                                <tr>
+                                    <td>{{ list.car_number }}</td>
+                                    <td>{{ list.during_in_time }}</td>
+                                    <td>{{ list.during_out_time }}</td>
+                                    <td>{{ list.interviewer_workplace }}</td>
+                                    <td>{{ list.in_school }}</td>
+                                    <td>
+                                        <a href="{% url 'car_manage:apply_detail' %}?pk={{ list.id }}">详情</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-12 pagebtn">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="/static/js/permcar.js"></script>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "car_management/base/base.html" %}
+{% block left %}
+    <div class="col-sm-10 col-md-10 main">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">出入申请</h3>
+            </div>
+            <div class="panel-body">
+                <form id="abroad_form" class="form-horizontal" method="post" action="/car_manage/car_apply">
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="phone" class="col-sm-5 col-md-6 control-label">来访人姓名:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="number" class="col-sm-5 col-md-6 control-label">来访人有效证件号码:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="number" name="number" placeholder="身份证/有效证件">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="phone" class="col-sm-5 col-md-6 control-label">来访人手机号:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="phone" name="phone">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="user_workplace" class="col-sm-5 col-md-6 control-label">来访人单位:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="user_workplace" name="user_workplace">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="user_job" class="col-sm-5 col-md-6 control-label">来访人职务:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="user_job" name="user_job">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="car_id" class="col-sm-5 col-md-6 control-label">来访车牌号:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="car_id" name="car_id">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="timebegin" class="col-sm-5 col-md-6 control-label">预计进校时间(始):</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="timebegin" name="timebegin" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="timebegin" class="col-sm-5 col-md-6 control-label">预计进校时间(终):</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="timebegin_end" name="timebegin_end" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="interviewer_name" class="col-sm-5 col-md-6 control-label">受访人姓名:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="interviewer_name" name="interviewer_name"
+                                   placeholder="有受访人时填写">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="timeend" class="col-sm-5 col-md-6 control-label">预计出校时间(始):</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="timeend" name="timeend" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="timeend" class="col-sm-5 col-md-6 control-label">预计出校时间(终):</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="timeend_end" name="timeend_end" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="interviewer_phone" class="col-sm-5 col-md-6 control-label">受访人手机:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="interviewer_phone" name="interviewer_phone"
+                                   placeholder="有受访人时填写">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="interviewer_workplace" class="col-sm-5 col-md-6 control-label">受访部门:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <input type="text" class="form-control" id="interviewer_workplace"
+                                   name="interviewer_workplace">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="campus" class="col-sm-5 col-md-6 control-label">出入校区:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <select class='form-control' id='campus' name='campus'>
+                                {#                                <option value="未选择">未选择</option>#}
+                                <option value="清水河校区">清水河校区</option>
+                                {#                                <option value="沙河校区">沙河校区</option>#}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="reason" class="col-sm-5 col-md-6 control-label">事由:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <textarea class="form-control" id="reason" name="reason" placeholder="不少于5个字"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-4">
+                        <label for="note" class="col-sm-5 col-md-6 control-label">备注:</label>
+
+                        <div class="col-sm-7 col-md-6">
+                            <textarea class="form-control" id="note" name="note" placeholder="选填"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-12" id="Sbtn">
+                            <input type="submit" class="btn btn-default" id="abroad_btn" value="提交">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

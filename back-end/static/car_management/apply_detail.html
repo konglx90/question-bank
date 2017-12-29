@@ -1,0 +1,131 @@
+{% extends "car_management/base/base.html" %}
+{% block left %}
+    <link href="/static/css/car_manage1.css" rel="stylesheet">
+
+    <div class="col-sm-10 col-md-10 main">
+        <div class=" welcome" id="boxright">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">车辆预约申请</h3>
+                </div>
+                <div class="panel-body">
+                    <form id="car_list" class="form-horizontal" method="post" action=''>
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">预约码(当日有效):</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.order_number }}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">来访人姓名:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.name }}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">来访人有效证件号码:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.number }}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">来访人手机:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.phone }}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">来访人单位:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.user_workplace }}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">来访人职务:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.user_job }}</p>
+                            </div>
+                        </div>
+                        {% if order.interviewer_name %}
+                            <div class="col-sm-6 col-md-4">
+                                <p class="col-sm-5 col-md-6 control-label">受访人姓名:</p>
+
+                                <div class="col-sm-7 col-md-6">
+                                    <p id="thiscampus" class="detail">{{ order.interviewer_name }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">受访部门:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.interviewer_workplace }}</p>
+                            </div>
+                        </div>
+                        {% if order.interviewer_phone %}
+                            <div class="col-sm-6 col-md-4">
+                                <p class="col-sm-5 col-md-6 control-label">受访人手机号码:</p>
+
+                                <div class="col-sm-7 col-md-6">
+                                    <p id="thiscampus" class="detail">{{ order.interviewer_phone }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">车牌号码:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p class="detail" id="car_id">{{ order.car_number }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">预计进校时间段:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p class="detail">{{ order.during_in_time }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">预计出校时间段:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p class="detail">{{ order.during_out_time }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">出入校区:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="thiscampus" class="detail">{{ order.in_school }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6 col-md-4">
+                            <p class="col-sm-5 col-md-6 control-label">事由:</p>
+
+                            <div class="col-sm-7 col-md-6">
+                                <p id="reason" class="detail">{{ order.reason }}</p>
+                            </div>
+                        </div>
+                        {% if order.note %}
+                            <div class="form-group col-sm-6 col-md-4">
+                                <p class="col-sm-5 col-md-6 control-label">备注:</p>
+
+                                <div class="col-sm-7 col-md-6">
+                                    <p id="note" class="detail">{{ order.note }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="form-group col-sm-12" id="Sbtn_parent">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

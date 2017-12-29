@@ -1,0 +1,46 @@
+{% extends "car_management/base/base.html"%}
+{% block left %}
+<div class="container-fluid" style="padding: 0;">
+    <div class="col-sm-10 col-md-10 main">
+        <div class="panel panel-default" style="height: 100%;">
+            <div class="panel-heading">
+                <h3 class="panel-title">车辆出入申请</h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>车牌号</th>
+                            <th>进校时间</th>
+                            <th>出校时间</th>
+                            <th>到访部门</th>
+                            <th>出入校区</th>
+                            <th>查看详情</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td>{{ order.car_number }}</td>
+                                <td>{{ order.in_time }}</td>
+                                <td>{{ order.out_time }}</td>
+                                <td>{{ order.place }}</td>
+                                <td>{{ order.in_school }}</td>
+                                <td>
+                                <td>
+                                    <a class="btn btn-default"
+                                       href="{% url "car_manage.views.check_detail" %}?pk={{ order.order_number }}">查看详情</a>
+                                </td>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,100 @@
+textarea {
+    resize: none;
+}
+#boxright {
+    margin-bottom: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.pagebtn {
+    text-align: center;
+}
+#pre, #next {
+    margin: 10px;
+}
+.pager {
+    display: inline-block;
+}
+.pager li > a, .pager li > span {
+    border: none;
+    padding: 0 10px;
+}
+.pager li {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+.panel, iframe .panel {
+    margin-bottom: 0;
+}
+
+#Sbtn {
+    text-align: center;
+}
+
+.detail {
+    text-align: left;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/*****************new index***************/
+body {
+    padding: 0;
+}
+
+
+.nav-top {
+    height: 50%;
+    overflow: hidden;
+}
+
+.top-img {
+    background: url(../img/1.jpg) no-repeat;
+    background-size: 130%;
+    background-position: 55% 11%;
+    height: 100%;
+}
+
+.nav-top .nav-two {
+    z-index: 100;
+    color: #000000;
+}
+
+.nav-top .nav-two {
+    position: relative;
+    float: right;
+    top: 90%;
+}
+
+.nav-top .nav-two a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.nav-top .nav-two a:hover {
+    font-weight: 700;
+}
+
+.nav-left {
+    background-color: #ECF6FF;
+}
+
+.main {
+    background-color: #e2f1fe;
+}
+
+
+.orgicon {
+    background: url("../img/orgicon.png");
+    height:35px;
+    width: 35px;
+    background-size: 100%;
+    display: inline-block;
+}

@@ -1,0 +1,96 @@
+
+.content-form{
+	min-height: 364px;
+	position: absolute;
+    left:50%;
+    Top:50%;
+    margin-top: 70px;
+    margin-left: -300px;
+}
+
+
+.form-horizontal .form-group{
+	margin-right: 0 !important;
+}
+
+.read-req{
+	text-align: center;
+}
+.reset-pw{
+	color: red;
+	display: inline-block;
+	float: right;
+	line-height: 1.8;
+}
+.reset-pw:hover {
+	color: red;
+}
+.form-horizontal .form-submit{
+	margin-left: 0;
+	margin-right: 0 !important;
+}
+.form-submit input{
+	margin-top: 20px;
+	width: 100%;
+
+}
+@media(max-width: 768px){
+	.form-title{
+		padding-top: 8px;
+	}
+	.read-req{
+		font-size: 13px !important;
+	}
+	.input-group{
+		margin-left: 12px !important;
+	}
+}
+@media(max-width: 640px){
+
+	.form-horizontal .form-submit input{
+	margin-bottom: 10px;
+	}
+	.read-req{
+		font-size: 12px !important;
+	}
+}
+.btn-info {
+	background-color: #4ab8b6;
+	border-color: #4ab8b6;
+}
+.btn-info.active, .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover, .open>.dropdown-toggle.btn-info {
+	background-color: #4ab8b6 !important;
+	border-color: #4ab8b6 !important;
+}
+.input-group-addon {
+	padding: 3px 8px;
+}
+.glyphicon {
+	font-size: 17px;
+}
+.errors {
+	color: red;
+	padding: 0;
+	margin: 0;
+}
+.yanzhengma {
+	border: 1px solid #333;
+	padding: 5px 12px;
+	border-radius: 3px;
+	letter-spacing: 2px;
+}
+.fuckbitch {
+	padding-left: 0px;
+}
+.btn-info.disabled, .btn-info.disabled.active, .btn-info.disabled.focus, .btn-info.disabled:active, .btn-info.disabled:focus, .btn-info.disabled:hover, .btn-info[disabled], .btn-info[disabled].active, .btn-info[disabled].focus, .btn-info[disabled]:active, .btn-info[disabled]:focus, .btn-info[disabled]:hover, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info.active, fieldset[disabled] .btn-info.focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:hover{
+	background: #4ab8b6 !important;
+	border-color: #4ab8b6 !important;
+
+}
+.cao {
+	letter-spacing: 2px;
+}
+.nimeimei span {
+	color: red;
+}
+

@@ -1,0 +1,15 @@
+{{ object.phone }}
+{{ object.user_workplace }}
+{{ object.user_job }}
+{{ object.interviewer_name }}
+{{ object.interviewer_workplace }}
+{{ object.interviewer_phone }}
+{{ object.order_number }}
+{{ object.in_time }}
+{{ object.out_time }}
+{{ object.car_number }}
+{{ object.in_school }}
+{{ object.reason }}
+{{ object.date }}
+{{ object.note }}
+

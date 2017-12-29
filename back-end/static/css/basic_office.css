@@ -1,0 +1,386 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+    border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f5f5f5;
+        border-right: 1px solid #eee;
+    }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    color: #fff;
+    background-color: #428bca;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+.main .page-header {
+    margin-top: 0;
+}
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.placeholders h4 {
+    margin-bottom: 0;
+}
+
+.placeholder {
+    margin-bottom: 20px;
+}
+
+.placeholder img {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.welcome {
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+.welcome h1 {
+    position: absolute;
+    padding: 0;
+    margin: -34.5px 0 0 -346.5px;
+    top: 50%;
+    left: 50%;
+}
+
+#messages_btn {
+    display: block;
+}
+
+#boxright a {
+    text-decoration: none;
+}
+
+.new_messages {
+    color: #337ab7;
+}
+
+.old_messages {
+    color: #000;
+}
+
+#boxright .mail_title {
+    cursor: pointer;
+    max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.new_message .submitbtn {
+    text-align: center;
+}
+
+.new_message textarea {
+    resize: none;
+}
+
+#work_apply {
+    display: block;
+}
+
+#staff_time_begin, #staff_time_end {
+    display: inline-block;
+    max-width: 150px;
+}
+
+#apply_list .apply_title a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#boxright {
+    margin: 0;
+}
+
+.detail_mail p {
+    font-size: 14px;
+}
+
+.detail_mail .detail_title {
+    height: 32px;
+    line-height: 32px;
+    margin: 0;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.detail_mail .detail_body {
+    text-indent: 2em;
+    background-color: #fff;
+}
+
+.detail_mail .mail_type {
+    height: 32px;
+    line-height: 32px;
+    margin: 0;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 80px;
+    text-align: center;
+}
+
+.detail_mail .mail_teacher {
+    height: 32px;
+    line-height: 32px;
+    margin: 0;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 80px;
+    text-align: center;
+}
+
+#applySbtn {
+    margin: 0;
+    text-align: center;
+}
+
+.timeinput, .timelabel {
+    min-width: 200px;
+    max-width: 200px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.welcome .mail-btn {
+    margin-bottom: 30px;
+}
+
+/************站内信iframe***************/
+.welcome .innermail {
+    border: none;
+}
+
+.innermail html body {
+    padding-top: 0;
+}
+
+.subnavilist {
+    margin-bottom: 30px;
+}
+
+.subnavilist a {
+    color: #333;
+}
+
+#postMailBtn {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.readmail {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mailstylr {
+    min-width: 470px;
+}
+
+/***************加班审核列表********************/
+.applylist td {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.applylist a {
+    cursor: pointer;
+}
+
+.pagebtn {
+    text-align: center;
+}
+
+#pre, #next {
+    margin: 10px;
+}
+
+.pager {
+    display: inline-block;
+}
+
+.pager li {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.pager li > a, .pager li > span {
+    border: none;
+    padding: 0 10px;
+}
+
+.panel {
+    margin-bottom: 0;
+}
+
+#apply_form label {
+    min-width: 150px;
+}
+
+#apply_form input {
+    min-width: 180px;
+    text-align: center;
+}
+
+/**************值班申请列表******************/
+.dutylist td {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dutylist a {
+    cursor: pointer;
+}
+
+/****************巡逻记录列表****************/
+.roundslist td {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.roundslist a {
+    cursor: pointer;
+}
+
+/*************文件****************/
+.filelist td {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.filelist a {
+    cursor: pointer;
+}
+
+.file-panel-title {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.fileup {
+    margin-left: 10px;
+}
+#id_file {
+    margin-top: 7px;
+}
+
+/***********资产登记页面用*************/
+#asset_form input {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+#asset_form label {
+    margin-top: 7px;
+}
+
+#campus {
+    width: 150px;
+}
+
+.error, .correct {
+    float: left;
+    margin-top: 7px;
+}
+
+/*********出入境申请页面用**************/
+#abroad_sex {
+    margin-top: 7px;
+}
+

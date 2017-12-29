@@ -1,0 +1,43 @@
+textarea {
+    resize: none;
+}
+#boxright {
+    margin-bottom: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.pagebtn {
+    text-align: center;
+}
+#pre, #next {
+    margin: 10px;
+}
+.pager {
+    display: inline-block;
+}
+.pager li > a, .pager li > span {
+    border: none;
+    padding: 0 10px;
+}
+.pager li {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+.panel, iframe .panel {
+    margin-bottom: 0;
+}
+
+#Sbtn {
+    text-align: center;
+}
+
+.detail {
+    text-align: left;
+    font-size: 14px;
+    padding: 5px;
+}
+

@@ -1,0 +1,75 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>车辆出入管理</title>
+    <link href="/static/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/lib/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/css/basic_office.css" rel="stylesheet">
+    <link href="/static/css/slidebar.css" rel="stylesheet">
+    <link href="/static/css/header.css" rel="stylesheet">
+    <link href="/static/css/lib/jquery-ui.min.css" rel="stylesheet">
+    <link href="/static/css/car_manage.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+
+</head>
+<body>
+    <nav class="nav-top">
+        <div class="top-img">
+            <div class="nav-two">
+                <a href="" id="exit">退出系统</a>
+                <a href="" id="exit">修改初始密码</a>
+            </div>
+        </div>
+    </nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 col-md-2 nav-left" id="sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="slidebar_btn"><a href="" id="apply"><h5>
+                    车辆入校申请</h5> <span
+                        class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li class="slidebar_btn"><a href="" id="result"><h5>我的车辆预约</h5></a>
+                </li>
+            </ul>
+            {% if perms.car_management.view_car_order %}
+                <ul class="nav nav-sidebar">
+                    <li class="slidebar_btn"><a href="" id="apply"><h5>
+                        车辆放行</h5> <span
+                            class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            {% endif %}
+            {% if perms.car_management.view_limits %}
+                <ul class="nav nav-sidebar">
+                    <li class="slidebar_btn"><a href="" id="apply"><h5>
+                        进校车辆数目限制</h5> <span
+                            class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+        {% block left %}
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+    <script src="/static/js/lib/jquery-2.1.4.min.js"></script>
+    <script src="/static/js/lib/bootstrap.min.js"></script>
+    <script src="/static/js/lib/jquery-ui.min.js"></script>
+    <script src="/static/js/lib/bootstrap-datetimepicker.min.js"></script>
+    <script src="/static/js/lib/mustache.min.js"></script>
+    <script src="/static/js/header.js"></script>
+    <script src="/static/js/car_management.js"></script>
+    <!-- Custom js for this template -->
+
+</body>
+</html>
